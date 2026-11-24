@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prywatne Szkoły Niepubliczne – Technikum Nowy Sącz | Rok zał. 1992</title>
+  <meta name="description" content="Prywatne Szkoły Niepubliczne w Nowym Sączu (ul. Kochanowskiego 3). Technikum: Programista, Informatyk, Fotografia i Multimedia, Reklama, Ekonomista, Hotelarstwo, Organizacja Turystyki. Czesne 0 zł, Prawo jazdy -50%." />
+
+  <!-- Czysty font Inter z Google Fonts z natychmiastowym fallbackiem systemowym -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. ZMIENNE KOLORYSTYCZNE I TYPOGRAFIA (MINIMALIZM / ZERO GRADIENTÓW)
+       ========================================================================== */
+    :root {
+      --bg-page: #FFFFFF;
+      --bg-surface: #F8FAFC;
+      --bg-surface-hover: #F1F5F9;
+      --border-color: #E2E8F0;
+      --border-strong: #CBD5E1;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --accent: #1E3A8A;
+      --accent-hover: #172554;
+      --accent-contrast: #FFFFFF;
+      --accent-subtle: #EFF6FF;
+      --accent-subtle-text: #1E3A8A;
+      --crest-red: #DC2626;
+      --header-bg: rgba(255, 255, 255, 0.96);
+      --overlay-bg: rgba(15, 23, 42, 0.55);
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --container-max: 1160px;
+      --transition: 150ms ease;
+    }
+
+    html.dark {
+      --bg-page: #0B0F19;
+      --bg-surface: #111827;
+      --bg-surface-hover: #182235;
+      --border-color: #1F2937;
+      --border-strong: #374151;
+      --text-primary: #F9FAFB;
+      --text-secondary: #9CA3AF;
+      --text-muted: #6B7280;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-contrast: #FFFFFF;
+      --accent-subtle: #172554;
+      --accent-subtle-text: #93C5FD;
+      --crest-red: #EF4444;
+      --header-bg: rgba(11, 15, 25, 0.96);
+      --overlay-bg: rgba(0, 0, 0, 0.72);
+    }
+
+    /* ==========================================================================
+       2. RESET I PODSTAWY MOBILE-FIRST (OD 360PX W GÓRĘ)
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: 100%;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+
+    /* ==========================================================================
+       3. PRZYCISKI I ELEMENTY INTERAKTYWNE (MIN. 44PX WYSOKOŚCI NA TELEFON)
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      line-height: 1.2;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--border-strong);
+    }
+
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--text-secondary);
+      border-color: transparent;
+      padding: 10px 12px;
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: background-color var(--transition), border-color var(--transition);
+      flex-shrink: 0;
+    }
+
+    .icon-btn:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--border-strong);
+    }
+
+    /* ==========================================================================
+       4. NAGŁÓWEK I NAWIGACJA (STICKY, CZYSTY UKŁAD)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: var(--header-bg);
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color var(--transition), border-color var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 72px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    @media (min-width: 640px) {
+      .brand-title {
+        font-size: 1.0625rem;
+      }
+      .brand-subtitle {
+        font-size: 0.8125rem;
+      }
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-desktop {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    .nav-link:hover {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .edziennik-desktop {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .edziennik-desktop {
+        display: inline-flex;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .mobile-toggle {
+        display: none;
+      }
+    }
+
+    /* Wysuwane menu mobilne */
+    .mobile-drawer {
+      display: none;
+      border-top: 1px solid var(--border-color);
+      background-color: var(--bg-page);
+      padding: 16px;
+    }
+
+    .mobile-drawer.is-open {
+      display: block;
+    }
+
+    @media (min-width: 1024px) {
+      .mobile-drawer {
+        display: none !important;
+      }
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      background: transparent;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color var(--transition);
+    }
+
+    .mobile-nav-link:hover {
+      background-color: var(--bg-surface);
+    }
+
+    .mobile-drawer-footer {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       5. SEKCJE OGÓLNE I TYPOGRAFIA SZWAJCARSKA
+       ========================================================================== */
+    .section {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+    }
+
+    .section-surface {
+      background-color: var(--bg-surface);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.25rem;
+      }
+    }
+
+    .section-lead {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 68ch;
+    }
+
+    @media (min-width: 768px) {
+      .section-lead {
+        font-size: 1.0625rem;
+      }
+    }
+
+    /* ==========================================================================
+       6. HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding-top: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: 64px;
+        padding-bottom: 72px;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1.35fr 0.85fr;
+        gap: 48px;
+        align-items: center;
+      }
+    }
+
+    .hero-title {
+      font-size: 2.125rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 2.75rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 3.25rem;
+      }
+    }
+
+    .hero-subtitle {
+      margin-top: 18px;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 60ch;
+    }
+
+    @media (min-width: 768px) {
+      .hero-subtitle {
+        font-size: 1.125rem;
+      }
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (min-width: 480px) {
+      .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    }
+
+    .hero-quick-links {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      min-height: 36px;
+      font-weight: 500;
+      color: var(--accent);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    .text-link:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Prawa kolumna Hero: Wyróżniki i Atuty szkoły */
+    .highlights-panel {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .highlights-panel {
+        padding: 24px;
+      }
+    }
+
+    .highlights-header {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 16px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 420px) {
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .stat-box {
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 6px;
+    }
+
+    .stat-desc {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .highlights-meta {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .highlights-meta strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       7. SIATKA KIERUNKÓW KSZTAŁCENIA (1 -> 2 -> 3 KOLUMNY)
+       ========================================================================== */
+    .section-header-row {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .section-header-row {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 36px;
+      }
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-chip {
+      min-height: 40px;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      background-color: var(--bg-page);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .filter-chip:hover {
+      background-color: var(--bg-surface-hover);
+      color: var(--text-primary);
+    }
+
+    .filter-chip.is-active {
+      background-color: var(--accent);
+      color: var(--accent-contrast);
+      border-color: var(--accent);
+    }
+
+    .majors-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .majors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .majors-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+    }
+
+    .major-card {
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color var(--transition), background-color var(--transition);
+    }
+
+    .major-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    .major-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-subtle-text);
+      background-color: var(--accent-subtle);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+    }
+
+    .major-title {
+      font-size: 1.1875rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+    }
+
+    .major-desc {
+      margin-top: 10px;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .major-footer {
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .major-perk {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       8. SEKCJA O SZKOLE / TRADYCJA OD 1992 + SZYBKI DOSTĘP
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 48px;
+        align-items: start;
+      }
+    }
+
+    .about-text {
+      margin-top: 16px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .about-facts {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 540px) {
+      .about-facts {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .fact-item {
+      padding: 14px 16px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .fact-item strong {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .fact-item span {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    /* Kafelki dokumentów i narzędzi szkolnych */
+    .docs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .doc-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: 100%;
+      min-height: 64px;
+      padding: 16px 18px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      text-align: left;
+      cursor: pointer;
+      transition: background-color var(--transition), border-color var(--transition);
+    }
+
+    .doc-card:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--border-strong);
+    }
+
+    .doc-card-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .doc-card-desc {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .doc-card-arrow {
+      font-size: 1rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       9. MEDIA SPOŁECZNOŚCIOWE (OCENA 5/5)
+       ========================================================================== */
+    .social-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+
+    .social-card {
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color var(--transition);
+    }
+
+    .social-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    .social-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .social-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: var(--text-primary);
+    }
+
+    .social-rating {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    .social-desc {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .social-link-row {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       10. SEKCJA KONTAKT I FORMULARZ REKRUTACYJNY
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 48px;
+        align-items: start;
+      }
+    }
+
+    .contact-list {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-item {
+      padding: 16px 18px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .contact-value {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    a.contact-value:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .form-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    @media (min-width: 640px) {
+      .form-card {
+        padding: 28px;
+      }
+    }
+
+    .form-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .form-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .form-stack {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .form-row-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .field-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .field-input, .field-select, .field-textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.9375rem;
+      transition: border-color var(--transition);
+    }
+
+    .field-input:focus, .field-select:focus, .field-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .field-textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .form-message {
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+    }
+
+    .form-message.is-error {
+      border-color: var(--crest-red);
+      color: var(--crest-red);
+    }
+
+    .form-message.is-success {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ==========================================================================
+       11. STOPKA (FOOTER)
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-surface);
+      padding-top: 40px;
+      padding-bottom: 40px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-heading {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a, .footer-links button {
+      background: none;
+      border: none;
+      padding: 2px 0;
+      color: var(--text-secondary);
+      text-align: left;
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover, .footer-links button:hover {
+      color: var(--text-primary);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    /* ==========================================================================
+       12. MODALE (KIERUNEK / STANDARDY / COOKIE USTAWIENIA)
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background-color: var(--overlay-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-dialog {
+      width: 100%;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    @media (min-width: 640px) {
+      .modal-dialog {
+        padding: 28px;
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .modal-body {
+      margin-top: 16px;
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .modal-list {
+      margin-top: 12px;
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+
+    .modal-footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       13. DYSKRETNY PASEK PLIKÓW COOKIE NA DOLE EKRANU
+       ========================================================================== */
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background-color: var(--bg-page);
+      border-top: 1px solid var(--border-color);
+      padding: 14px 16px;
+    }
+
+    .cookie-bar-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (min-width: 900px) {
+      .cookie-bar-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+    }
+
+    .cookie-text {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .cookie-text strong {
+      color: var(--text-primary);
+    }
+
+    .cookie-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .cookie-actions .btn {
+      min-height: 40px;
+      padding: 8px 14px;
+      font-size: 0.8125rem;
+    }
+
+    .cookie-option-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 14px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-top: 10px;
+    }
+
+    .cookie-option-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .cookie-option-desc {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .cookie-checkbox {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+  </style>
+
+  <!-- Natychmiastowy odczyt motywu z cookie przed wyrenderowaniem strony (brak mignięcia) -->
+  <script>
+    (function () {
+      var match = document.cookie.match(/(?:^|; )psn_theme=([^;]*)/);
+      if (match && decodeURIComponent(match[1]) === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==================== NAGŁÓWEK I NAWIGACJA ==================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Klasyczne, płaskie logo PSN (Tarcza szkolna) -->
+      <a href="#start" class="brand" aria-label="Prywatne Szkoły Niepubliczne – Strona główna">
+        <svg class="brand-logo" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <!-- Zewnętrzny obrys tarczy -->
+          <path d="M4 4H44V25C44 37.5 35.2 45.8 24 49.5C12.8 45.8 4 37.5 4 25V4Z" fill="#1E3A8A"/>
+          <!-- Wewnętrzna ramka tarczy -->
+          <path d="M7.5 7.5H40.5V24.6C40.5 35.1 33.2 42.1 24 45.4C14.8 42.1 7.5 35.1 7.5 24.6V7.5Z" stroke="#FFFFFF" stroke-width="1.5"/>
+          <!-- Górny pasek z rokiem założenia 1992 i subtelnym czerwonym akcentem -->
+          <rect x="8.25" y="8.25" width="31.5" height="8.5" fill="#DC2626"/>
+          <text x="24" y="14.5" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="6.5" font-weight="700" letter-spacing="0.8">1992</text>
+          <!-- Wyraźny monogram PSN -->
+          <text x="24" y="30.5" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6">PSN</text>
+          <!-- Symbol otwartej księgi u podstawy tarczy -->
+          <path d="M15 36.5C18 35.3 21 35.7 24 37C27 35.7 30 35.3 33 36.5V39.5C30 38.3 27 38.7 24 40C21 38.7 18 38.3 15 39.5V36.5Z" fill="#FFFFFF"/>
+        </svg>
+
+        <div class="brand-text">
+          <span class="brand-title">Prywatne Szkoły Niepubliczne</span>
+          <span class="brand-subtitle">Technikum Nowy Sącz • Rok zał. 1992</span>
+        </div>
+      </a>
+
+      <!-- Nawigacja Desktop -->
+      <nav class="nav-desktop" aria-label="Nawigacja główna">
+        <a href="#kierunki" class="nav-link">Kierunki</a>
+        <a href="#o-szkole" class="nav-link">O szkole</a>
+        <a href="#aktualnosci" class="nav-link">Aktualności</a>
+        <button type="button" class="nav-link" onclick="openStandardsModal()">Standardy</button>
+        <a href="#kontakt" class="nav-link">Rekrutacja i kontakt</a>
+      </nav>
+
+      <!-- Akcje po prawej -->
+      <div class="header-actions">
+        <a href="https://uonetplus.vulcan.net.pl/nowysacz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary edziennik-desktop">
+          e-Dziennik
+        </a>
+
+        <!-- Przełącznik motywu (Jasny / Ciemny) -->
+        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Przełącz motyw jasny lub ciemny" title="Zmień motyw (Jasny / Ciemny)">
+          <!-- Ikona księżyca (pokazywana w trybie jasnym) -->
+          <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Ikona słońca (pokazywana w trybie ciemnym) -->
+          <svg id="icon-sun" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Przycisk menu mobilnego -->
+        <button type="button" id="mobile-menu-toggle" class="icon-btn mobile-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Otwórz menu nawigacji">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Wysuwane menu na telefon -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <div class="container">
+        <ul class="mobile-nav-list">
+          <li><a href="#kierunki" class="mobile-nav-link" onclick="closeMobileMenu()">Kierunki kształcenia (7)</a></li>
+          <li><a href="#o-szkole" class="mobile-nav-link" onclick="closeMobileMenu()">O szkole (od 1992 r.)</a></li>
+          <li><a href="#aktualnosci" class="mobile-nav-link" onclick="closeMobileMenu()">Aktualności</a></li>
+          <li><button type="button" class="mobile-nav-link" onclick="closeMobileMenu(); openStandardsModal();">Standardy Ochrony Małoletnich</button></li>
+          <li><a href="#kontakt" class="mobile-nav-link" onclick="closeMobileMenu()">Rekrutacja i kontakt</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <a href="https://uonetplus.vulcan.net.pl/nowysacz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Przejdź do e-Dziennika
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="start">
+    <!-- ==================== SEKCJA HERO ==================== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Prywatne Szkoły Niepubliczne • Nowy Sącz • Od 1992 roku</span>
+          <h1 class="hero-title">Zmieniamy się według Waszych potrzeb</h1>
+          <p class="hero-subtitle">
+            Chcesz mieć pewną pracę? Zostań elitarnym informatykiem lub wybierz jeden z 7 kierunków technikum z państwowym dyplomem.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#kierunki" class="btn btn-primary">Zobacz kierunki</a>
+            <a href="#kontakt" class="btn btn-secondary">Rekrutacja i kontakt</a>
+          </div>
+
+          <div class="hero-quick-links">
+            <a href="https://uonetplus.vulcan.net.pl/nowysacz" target="_blank" rel="noopener noreferrer" class="text-link">
+              e-Dziennik &rarr;
+            </a>
+            <span>&bull;</span>
+            <button type="button" class="text-link" onclick="openStandardsModal()">
+              Standardy Ochrony Małoletnich
+            </button>
+          </div>
+        </div>
+
+        <!-- Panel kluczowych atutów (Czesne 0 zł / Prawo jazdy -50%) -->
+        <aside class="highlights-panel" aria-label="Najważniejsze korzyści dla uczniów">
+          <div class="highlights-header">Warunki nauki w Technikum PSN</div>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-value">Czesne 0 zł</div>
+              <div class="stat-label">Nauka bezpłatna</div>
+              <div class="stat-desc">Brak opłat za naukę w technikum przez cały okres kształcenia.</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">Prawo jazdy -50%</div>
+              <div class="stat-label">Zniżka dla uczniów</div>
+              <div class="stat-desc">Dofinansowanie do kursu na prawo jazdy dla naszych uczniów.</div>
+            </div>
+          </div>
+
+          <div class="highlights-meta">
+            <div><strong>Adres:</strong> ul. Kochanowskiego 3, 33-300 Nowy Sącz</div>
+            <div><strong>Sekretariat:</strong> <a href="tel:0184443704" class="text-link" style="min-height:auto;">018 444 37 04</a></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== SEKCJA 7 KIERUNKÓW KSZTAŁCENIA ==================== -->
+    <section id="kierunki" class="section section-surface">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="eyebrow">Oferta Edukacyjna • Technikum</span>
+            <h2 class="section-title">Kierunki kształcenia</h2>
+            <p class="section-lead">
+              Wybierz jeden z 7 zawodów przygotowujących do matury oraz egzaminów potwierdzających kwalifikacje w zawodzie.
+            </p>
+          </div>
+
+          <!-- Czyste filtry kategorii -->
+          <div class="filter-bar" role="tablist" aria-label="Filtruj kierunki kształcenia">
+            <button type="button" class="filter-chip is-active" data-filter="all">Wszystkie (7)</button>
+            <button type="button" class="filter-chip" data-filter="it">IT i Media (4)</button>
+            <button type="button" class="filter-chip" data-filter="biznes">Biznes i Turystyka (3)</button>
+          </div>
+        </div>
+
+        <div id="majors-grid" class="majors-grid">
+          <!-- Karty kierunków generowane przez czysty Vanilla JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEKCJA O SZKOLE / TRADYCJA OD 1992 ==================== -->
+    <section id="o-szkole" class="section">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">Tradycja i doświadczenie</span>
+          <h2 class="section-title">Ponad 30 lat doświadczenia w edukacji</h2>
+          <p class="about-text">
+            Prywatne Szkoły Niepubliczne to jedne z najdłużej działających jednostek na rynku prywatnych usług oświatowych w Polsce. Funkcjonujemy od roku <strong>1992</strong>, sukcesywnie zdobywając wiedzę o tym, jak powinna wyglądać nowoczesna, przyjazna uczniom szkoła.
+          </p>
+
+          <div class="about-facts">
+            <div class="fact-item">
+              <strong>Od 1992 r.</strong>
+              <span>Nieprzerwana działalność oświatowa w Nowym Sączu</span>
+            </div>
+            <div class="fact-item">
+              <strong>7 zawodów</strong>
+              <span>Kierunki dopasowane do potrzeb rynku pracy</span>
+            </div>
+            <div class="fact-item">
+              <strong>Dyplom państwowy</strong>
+              <span>Przygotowanie do matury i egzaminów zawodowych</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Szybki dostęp do dokumentów i aktualności -->
+        <div id="aktualnosci">
+          <span class="eyebrow">Informacje i dokumenty</span>
+          <div class="docs-list">
+            <a href="#kontakt" class="doc-card">
+              <div>
+                <div class="doc-card-title">Rekrutacja do Technikum</div>
+                <div class="doc-card-desc">Informacje o naborze, dokumentach i formularz wstępny (Czesne 0 zł).</div>
+              </div>
+              <span class="doc-card-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+
+            <button type="button" class="doc-card" onclick="openStandardsModal()">
+              <div>
+                <div class="doc-card-title">Standardy Ochrony Małoletnich</div>
+                <div class="doc-card-desc">Obowiązujące w szkole procedury bezpieczeństwa i ochrony uczniów.</div>
+              </div>
+              <span class="doc-card-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+
+            <a href="https://uonetplus.vulcan.net.pl/nowysacz" target="_blank" rel="noopener noreferrer" class="doc-card">
+              <div>
+                <div class="doc-card-title">e-Dziennik Ucznia i Rodzica</div>
+                <div class="doc-card-desc">Bezpośredni dostęp do ocen, frekwencji i ogłoszeń szkolnych.</div>
+              </div>
+              <span class="doc-card-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+
+            <button type="button" class="doc-card" onclick="openNewsModal()">
+              <div>
+                <div class="doc-card-title">Aktualności szkolne</div>
+                <div class="doc-card-desc">Bieżące komunikaty dotyczące organizacji roku szkolnego i wydarzeń.</div>
+              </div>
+              <span class="doc-card-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEKCJA MEDIA SPOŁECZNOŚCIOWE (5/5) ==================== -->
+    <section class="section section-surface">
+      <div class="container">
+        <span class="eyebrow">Społeczność szkolna</span>
+        <h2 class="section-title">Życie szkoły w mediach społecznościowych</h2>
+        <p class="section-lead">
+          Śledź bieżące wydarzenia, relacje z zajęć praktycznych oraz materiały wideo z życia Prywatnych Szkół Niepublicznych.
+        </p>
+
+        <div class="social-grid">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div>
+              <div class="social-top">
+                <div class="social-name">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                  <span>Facebook</span>
+                </div>
+                <span class="social-rating">Ocena 5/5 &#9733;</span>
+              </div>
+              <p class="social-desc">
+                Bądź na bieżąco i obserwuj nas na Facebooku! Dzięki temu nie przegapisz żadnych wydarzeń i komunikatów dotyczących naszej szkoły.
+              </p>
+            </div>
+            <div class="social-link-row">Przejdź do profilu Facebook &rarr;</div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div>
+              <div class="social-top">
+                <div class="social-name">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                  <span>Instagram</span>
+                </div>
+                <span class="social-rating">Ocena 5/5 &#9733;</span>
+              </div>
+              <p class="social-desc">
+                Zobacz najciekawsze chwile z życia naszej szkoły. Specjalnie dla was udostępniamy te momenty na naszym Instagramie.
+              </p>
+            </div>
+            <div class="social-link-row">Zobacz Instagram szkoły &rarr;</div>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-card">
+            <div>
+              <div class="social-top">
+                <div class="social-name">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  <span>YouTube</span>
+                </div>
+                <span class="social-rating">Ocena 5/5 &#9733;</span>
+              </div>
+              <p class="social-desc">
+                Najważniejsze wydarzenia organizowane przez naszą szkołę w formie materiałów filmowych do obejrzenia w wygodny sposób na YouTube.
+              </p>
+            </div>
+            <div class="social-link-row">Oglądaj kanał YouTube &rarr;</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEKCJA KONTAKT I REKRUTACJA ==================== -->
+    <section id="kontakt" class="section">
+      <div class="container contact-grid">
+        <!-- Dane kontaktowe -->
+        <div>
+          <span class="eyebrow">Kontakt i lokalizacja</span>
+          <h2 class="section-title">Sekretariat szkoły</h2>
+          <p class="section-lead">
+            Zapraszamy kandydatów oraz rodziców do kontaktu telefonicznego, mailowego lub osobistego w siedzibie szkoły w Nowym Sączu.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-label">Adres placówki</div>
+              <div class="contact-value">ul. Kochanowskiego 3, 33-300 Nowy Sącz</div>
+              <div style="margin-top: 6px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=ul.+Kochanowskiego+3,+33-300+Nowy+S%C4%85cz" target="_blank" rel="noopener noreferrer" class="text-link" style="min-height:auto; font-size:0.875rem;">
+                  Otwórz lokalizację na mapie &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-label">Telefon</div>
+              <div>
+                <a href="tel:0184443704" class="contact-value">018 444 37 04</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-label">Adres e-mail</div>
+              <div>
+                <a href="mailto:szkoly-prywatne@wp.pl" class="contact-value">szkoly-prywatne@wp.pl</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Czysty formularz kontaktowy / rekrutacyjny -->
+        <div class="form-card">
+          <h3 class="form-title">Zapytanie o rekrutację</h3>
+          <p class="form-subtitle">
+            Zostaw kontakt lub zadaj pytanie dotyczące wybranego kierunku, czesnego 0 zł lub zniżki na prawo jazdy (-50%).
+          </p>
+
+          <form id="contact-form" class="form-stack" novalidate>
+            <div class="form-row-2">
+              <div>
+                <label for="form-name" class="field-label">Imię i nazwisko *</label>
+                <input type="text" id="form-name" name="name" class="field-input" placeholder="Jan Kowalski" required />
+              </div>
+
+              <div>
+                <label for="form-major" class="field-label">Wybierz kierunek</label>
+                <select id="form-major" name="major" class="field-select">
+                  <option value="Technik programista">Technik programista</option>
+                  <option value="Technik informatyk">Technik informatyk</option>
+                  <option value="Technik fotografii i multimediów">Technik fotografii i multimediów</option>
+                  <option value="Technik reklamy">Technik reklamy</option>
+                  <option value="Technik ekonomista">Technik ekonomista</option>
+                  <option value="Technik hotelarstwa">Technik hotelarstwa</option>
+                  <option value="Technik organizacji turystyki">Technik organizacji turystyki</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="form-contact" class="field-label">Telefon lub adres e-mail *</label>
+              <input type="text" id="form-contact" name="contact" class="field-input" placeholder="np. 500 600 700 lub jan@example.pl" required />
+            </div>
+
+            <div>
+              <label for="form-message" class="field-label">Wiadomość (opcjonalnie)</label>
+              <textarea id="form-message" name="message" class="field-textarea" placeholder="Treść pytania do sekretariatu szkoły..."></textarea>
+            </div>
+
+            <div id="form-feedback" class="form-message hidden" role="status" aria-live="polite"></div>
+
+            <div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                Wyślij zapytanie
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== STOPKA ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary);">
+            Prywatne Szkoły Niepubliczne
+          </div>
+          <p style="margin-top: 8px; max-width: 40ch;">
+            Technikum w Nowym Sączu działające nieprzerwanie od 1992 roku. Kształcenie zawodowe z państwowym dyplomem.
+          </p>
+          <p style="margin-top: 10px;">
+            ul. Kochanowskiego 3, 33-300 Nowy Sącz<br />
+            Tel.: <a href="tel:0184443704">018 444 37 04</a> &bull; E-mail: <a href="mailto:szkoly-prywatne@wp.pl">szkoly-prywatne@wp.pl</a>
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Nawigacja</div>
+          <ul class="footer-links">
+            <li><a href="#start">Strona główna</a></li>
+            <li><a href="#kierunki">Kierunki kształcenia</a></li>
+            <li><a href="#o-szkole">O szkole</a></li>
+            <li><a href="#aktualnosci">Aktualności</a></li>
+            <li><a href="#kontakt">Rekrutacja i kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Informacje i narzędzia</div>
+          <ul class="footer-links">
+            <li><a href="https://uonetplus.vulcan.net.pl/nowysacz" target="_blank" rel="noopener noreferrer">e-Dziennik</a></li>
+            <li><button type="button" onclick="openStandardsModal()">Standardy Ochrony Małoletnich</button></li>
+            <li><button type="button" onclick="openCookieSettingsModal()">Ustawienia plików cookie</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 1992&ndash;2026 Prywatne Szkoły Niepubliczne w Nowym Sączu. Wszelkie prawa zastrzeżone.</div>
+        <div>Strona wykonana i administrowana przez: Krzysztof Janusz &amp; Mirosław Filip</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL SZCZEGÓŁÓW KIERUNKU ==================== -->
+  <div id="major-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="major-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span id="major-modal-tag" class="major-tag" style="margin-bottom: 6px;"></span>
+          <h3 id="major-modal-title" class="modal-title"></h3>
+        </div>
+        <button type="button" class="icon-btn" onclick="closeMajorModal()" aria-label="Zamknij szczegóły kierunku">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <p id="major-modal-desc"></p>
+        <div style="margin-top: 16px; font-weight: 600; color: var(--text-primary);">Zakres kształcenia i kwalifikacje:</div>
+        <ul id="major-modal-list" class="modal-list"></ul>
+        <div style="margin-top: 16px; padding: 12px 14px; background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.875rem; color: var(--text-primary);">
+          <strong>Warunki nauki:</strong> Czesne 0 zł &bull; Prawo jazdy -50% &bull; Dyplom państwowy potwierdzający kwalifikacje zawodowe.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeMajorModal()">Zamknij</button>
+        <button type="button" id="major-modal-select-btn" class="btn btn-primary">Wybierz ten kierunek w formularzu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL STANDARDY OCHRONY MAŁOLETNICH ==================== -->
+  <div id="standards-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="standards-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="standards-modal-title" class="modal-title">Standardy Ochrony Małoletnich</h3>
+        <button type="button" class="icon-btn" onclick="closeStandardsModal()" aria-label="Zamknij okno">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          W Prywatnych Szkołach Niepublicznych w Nowym Sączu obowiązują Standardy Ochrony Małoletnich, mające na celu zapewnienie wszystkim uczniom bezpiecznego i przyjaznego środowiska edukacyjnego.
+        </p>
+        <ul class="modal-list">
+          <li>Zasady bezpiecznych relacji pomiędzy personelem szkoły a uczniami.</li>
+          <li>Procedury reagowania i interwencji w przypadku podejrzenia krzywdzenia małoletniego.</li>
+          <li>Zasady bezpiecznego korzystania z Internetu i urządzeń elektronicznych na terenie szkoły.</li>
+          <li>Pełna treść dokumentu jest dostępna do wglądu w sekretariacie szkoły przy ul. Kochanowskiego 3 w Nowym Sączu.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="closeStandardsModal()">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL AKTUALNOŚCI ==================== -->
+  <div id="news-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="news-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="news-modal-title" class="modal-title">Aktualności szkolne</h3>
+        <button type="button" class="icon-btn" onclick="closeNewsModal()" aria-label="Zamknij aktualności">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div style="padding-bottom: 14px; border-bottom: 1px solid var(--border-color);">
+          <div style="font-weight: 600; color: var(--text-primary);">Rekrutacja do Technikum PSN</div>
+          <p style="margin-top: 4px; font-size: 0.9rem;">
+            Trwa nabór na 7 kierunków technikum. Uczniowie korzystają z bezpłatnej nauki (czesne 0 zł) oraz dofinansowania do kursu prawa jazdy (-50%).
+          </p>
+        </div>
+        <div style="padding-top: 14px;">
+          <div style="font-weight: 600; color: var(--text-primary);">Kontakt z sekretariatem szkoły</div>
+          <p style="margin-top: 4px; font-size: 0.9rem;">
+            Szczegółowe informacje o planach lekcji i dokumentach rekrutacyjnych udzielane są pod numerem telefonu 018 444 37 04 oraz w siedzibie przy ul. Kochanowskiego 3.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="closeNewsModal()">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL USTAWIEŃ PLIKÓW COOKIE ==================== -->
+  <div id="cookie-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="cookie-modal-title" class="modal-title">Ustawienia plików cookie</h3>
+        <button type="button" class="icon-btn" onclick="closeCookieSettingsModal()" aria-label="Zamknij ustawienia plików cookie">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Zarządzaj swoimi preferencjami dotyczącymi plików cookie zapisywanych w przeglądarce przez serwis Prywatnych Szkół Niepublicznych.
+        </p>
+
+        <div class="cookie-option-row">
+          <div>
+            <div class="cookie-option-title">Niezbędne pliki cookie</div>
+            <div class="cookie-option-desc">Wymagane do prawidłowego działania strony i zapisu wyboru zgody.</div>
+          </div>
+          <input type="checkbox" class="cookie-checkbox" checked disabled aria-label="Niezbędne pliki cookie (zawsze aktywne)" />
+        </div>
+
+        <label class="cookie-option-row" style="cursor: pointer;">
+          <div>
+            <div class="cookie-option-title">Preferencje motywu (Jasny / Ciemny)</div>
+            <div class="cookie-option-desc">Zapamiętuje wybrany motyw kolorystyczny strony podczas kolejnych wizyt.</div>
+          </div>
+          <input type="checkbox" id="cookie-pref-theme" class="cookie-checkbox" checked />
+        </label>
+
+        <label class="cookie-option-row" style="cursor: pointer;">
+          <div>
+            <div class="cookie-option-title">Analityczne pliki cookie</div>
+            <div class="cookie-option-desc">Pomagają nam mierzyć zainteresowanie poszczególnymi kierunkami kształcenia.</div>
+          </div>
+          <input type="checkbox" id="cookie-pref-analytics" class="cookie-checkbox" checked />
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeCookieSettingsModal()">Anuluj</button>
+        <button type="button" class="btn btn-primary" onclick="saveCookiePreferences()">Zapisz ustawienia</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DYSKRETNY PASEK PLIKÓW COOKIE ==================== -->
+  <aside id="cookie-banner" class="cookie-bar hidden" aria-label="Informacja o plikach cookie">
+    <div class="cookie-bar-inner">
+      <p class="cookie-text">
+        <strong>Pliki cookie:</strong> Strona Prywatnych Szkół Niepublicznych wykorzystuje pliki cookie w celu zapewnienia prawidłowego działania serwisu oraz zapamiętania wybranego motywu (jasny/ciemny).
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-ghost" onclick="openCookieSettingsModal()">Ustawienia</button>
+        <button type="button" class="btn btn-secondary" onclick="applyCookieConsent({ theme: false, analytics: false })">Tylko niezbędne</button>
+        <button type="button" class="btn btn-primary" onclick="applyCookieConsent({ theme: true, analytics: true })">Akceptuj wszystkie</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== LOGIKA VANILLA JAVASCRIPT ==================== -->
+  <script>
+    'use strict';
+
+    /* --------------------------------------------------------------------------
+       1. PRAWDZIWE PLIKI COOKIE (document.cookie)
+       -------------------------------------------------------------------------- */
+    function setCookie(name, value, days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      var expires = 'expires=' + date.toUTCString();
+      document.cookie = name + '=' + encodeURIComponent(value) + ';' + expires + ';path=/;SameSite=Lax';
+    }
+
+    function getCookie(name) {
+      var prefix = name + '=';
+      var parts = document.cookie.split(';');
+      for (var i = 0; i < parts.length; i++) {
+        var c = parts[i].trim();
+        if (c.indexOf(prefix) === 0) {
+          return decodeURIComponent(c.substring(prefix.length));
+        }
+      }
+      return null;
+    }
+
+    function deleteCookie(name) {
+      document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax';
+    }
+
+    /* --------------------------------------------------------------------------
+       2. ZARZĄDZANIE ZGODĄ COOKIES I PREFERENCJAMI
+       -------------------------------------------------------------------------- */
+    var cookieBanner = document.getElementById('cookie-banner');
+    var cookieModal = document.getElementById('cookie-modal');
+    var prefThemeCheckbox = document.getElementById('cookie-pref-theme');
+    var prefAnalyticsCheckbox = document.getElementById('cookie-pref-analytics');
+
+    function getConsentObject() {
+      var raw = getCookie('psn_cookie_consent');
+      if (!raw) return null;
+      try {
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function applyCookieConsent(prefs) {
+      var consentData = {
+        necessary: true,
+        theme: Boolean(prefs.theme),
+        analytics: Boolean(prefs.analytics)
+      };
+
+      setCookie('psn_cookie_consent', JSON.stringify(consentData), 180);
+
+      // Jeśli użytkownik wyłączył zapis preferencji motywu, usuwamy cookie psn_theme
+      if (!consentData.theme) {
+        deleteCookie('psn_theme');
+      } else {
+        var isDark = document.documentElement.classList.contains('dark');
+        setCookie('psn_theme', isDark ? 'dark' : 'light', 180);
+      }
+
+      if (consentData.analytics) {
+        setCookie('psn_analytics_enabled', '1', 180);
+      } else {
+        deleteCookie('psn_analytics_enabled');
+      }
+
+      cookieBanner.classList.add('hidden');
+      closeCookieSettingsModal();
+    }
+
+    function openCookieSettingsModal() {
+      var current = getConsentObject();
+      if (current) {
+        prefThemeCheckbox.checked = Boolean(current.theme);
+        prefAnalyticsCheckbox.checked = Boolean(current.analytics);
+      } else {
+        prefThemeCheckbox.checked = true;
+        prefAnalyticsCheckbox.checked = true;
+      }
+      cookieModal.classList.remove('hidden');
+    }
+
+    function closeCookieSettingsModal() {
+      cookieModal.classList.add('hidden');
+    }
+
+    function saveCookiePreferences() {
+      applyCookieConsent({
+        theme: prefThemeCheckbox.checked,
+        analytics: prefAnalyticsCheckbox.checked
+      });
+    }
+
+    // Pokaż dyskretny pasek cookie, jeśli użytkownik jeszcze nie wybrał opcji
+    if (!getConsentObject()) {
+      cookieBanner.classList.remove('hidden');
+    }
+
+    /* --------------------------------------------------------------------------
+       3. PRZEŁĄCZNIK MOTYWU (JASNY DOMYŚLNY / CIEMNY)
+       -------------------------------------------------------------------------- */
+    var themeToggleBtn = document.getElementById('theme-toggle');
+    var iconMoon = document.getElementById('icon-moon');
+    var iconSun = document.getElementById('icon-sun');
+
+    function syncThemeIcons() {
+      var isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        iconMoon.classList.add('hidden');
+        iconSun.classList.remove('hidden');
+      } else {
+        iconMoon.classList.remove('hidden');
+        iconSun.classList.add('hidden');
+      }
+    }
+
+    syncThemeIcons();
+
+    themeToggleBtn.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      syncThemeIcons();
+
+      var consent = getConsentObject();
+      // Zapisz motyw w cookie, jeśli nie odrzucono cookies preferencji
+      if (!consent || consent.theme) {
+        setCookie('psn_theme', isDark ? 'dark' : 'light', 180);
+      }
+    });
+
+    /* --------------------------------------------------------------------------
+       4. MENU MOBILNE
+       -------------------------------------------------------------------------- */
+    var mobileToggleBtn = document.getElementById('mobile-menu-toggle');
+    var mobileDrawer = document.getElementById('mobile-drawer');
+
+    mobileToggleBtn.addEventListener('click', function () {
+      var isOpen = mobileDrawer.classList.toggle('is-open');
+      mobileToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    function closeMobileMenu() {
+      mobileDrawer.classList.remove('is-open');
+      mobileToggleBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    /* --------------------------------------------------------------------------
+       5. 7 KIERUNKÓW KSZTAŁCENIA (DOKŁADNE TREŚCI ZE STRONY SZKOLY-PRYWATNE.PL)
+       -------------------------------------------------------------------------- */
+    var MAJORS = [
+      {
+        id: 'programista',
+        category: 'it',
+        tag: 'IT i Programowanie',
+        title: 'Technik programista',
+        description: 'Dynamiczny rozwój sektora IT oraz rosnące zapotrzebowanie na programistów sprawia, że jest to zawód jeden z najlepiej wynagradzanych. Z roku na rok obserwuje się ciągły rozwój tej branży, a rynek pracy wręcz pęka w szwach w ofertach IT.',
+        details: [
+          'Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych.',
+          'Programowanie aplikacji desktopowych i mobilnych w nowoczesnych językach programowania.',
+          'Testowanie, debugowanie i dokumentowanie tworzonego oprogramowania.'
+        ]
+      },
+      {
+        id: 'informatyk',
+        category: 'it',
+        tag: 'IT i Systemy',
+        title: 'Technik informatyk',
+        description: 'Najbardziej poszukiwany zawód na rynku pracy. Branża informatyczna jest jednym z najszybciej rozwijających się sektorów gospodarczych. Jeżeli czujesz, że świat IT to Twoje miejsce na Ziemi, ten kierunek jest dla Ciebie.',
+        details: [
+          'Administracja i eksploatacja systemów komputerowych, urządzeń peryferyjnych i lokalnych sieci komputerowych.',
+          'Projektowanie i wykonywanie lokalnych sieci komputerowych oraz administrowanie serwerami.',
+          'Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych.'
+        ]
+      },
+      {
+        id: 'fotografia',
+        category: 'it',
+        tag: 'Multimedia i Obraz',
+        title: 'Technik fotografii i multimediów',
+        description: 'Zawód niezwykle poszukiwany w dzisiejszych czasach, dający możliwość uzyskania państwowego dyplomu. Dla osób z twórczą wyobraźnią, kreatywnych i pełnych pomysłów.',
+        details: [
+          'Rejestracja, obróbka i publikacja obrazu fotograficznego oraz materiałów wideo.',
+          'Wykonywanie i realizacja projektów multimedialnych oraz grafiki komputerowej.',
+          'Praca w studiu fotograficznym, agencjach reklamowych i mediach z państwowym dyplomem.'
+        ]
+      },
+      {
+        id: 'reklama',
+        category: 'it',
+        tag: 'Marketing i Reklama',
+        title: 'Technik reklamy',
+        description: 'Zawód dla osób kreatywnych z twórczą wyobraźnią, które mają dużo pomysłów i pasjonują się światem reklamy.',
+        details: [
+          'Wykonywanie przekazu reklamowego oraz projektowanie materiałów promocyjnych.',
+          'Zarządzanie kampanią reklamową, prowadzenie działań marketingowych i public relations.',
+          'Organizacja sprzedaży oraz współpraca z mediami i klientami biznesowymi.'
+        ]
+      },
+      {
+        id: 'ekonomista',
+        category: 'biznes',
+        tag: 'Ekonomia i Finanse',
+        title: 'Technik ekonomista',
+        description: 'Specjaliści tego kierunku znajdą zatrudnienie niemal w każdej firmie. Dla osób przedsiębiorczych i komunikatywnych, interesujących się sferą społeczną, ekonomiczną i biznesową.',
+        details: [
+          'Prowadzenie dokumentacji w jednostce organizacyjnej oraz obsługa spraw kadrowo-płacowych.',
+          'Prowadzenie rachunkowości, rozliczeń finansowych i analiz ekonomicznych przedsiębiorstwa.',
+          'Przygotowanie do pracy w działach finansowych, biurach rachunkowych lub prowadzenia własnej firmy.'
+        ]
+      },
+      {
+        id: 'hotelarstwo',
+        category: 'biznes',
+        tag: 'Hotelarstwo i Usługi',
+        title: 'Technik hotelarstwa',
+        description: 'Bardzo poszukiwany zawód w związku z ciągle rozwijającą się branżą hotelarską. Obejmuje planowanie prac podległemu zespołowi oraz wprowadzanie rozwiązań technicznych i organizacyjnych. Dla osób otwartych i komunikatywnych.',
+        details: [
+          'Obsługa gości w obiekcie świadczącym usługi hotelarskie oraz organizacja pracy recepcji.',
+          'Realizacja usług dodatkowych w obiekcie hotelarskim oraz planowanie pracy zespołu.',
+          'Zastosowanie języka obcego zawodowego w obsłudze ruchu krajowego i międzynarodowego.'
+        ]
+      },
+      {
+        id: 'turystyka',
+        category: 'biznes',
+        tag: 'Turystyka i Eventy',
+        title: 'Technik organizacji turystyki',
+        description: 'Zawód poszukiwany ze względu na rosnące zapotrzebowanie na usługi turystyczne i imprezy masowe. Obejmuje organizowanie i obsługę eventów, imprez turystycznych, kongresów, konferencji i targów.',
+        details: [
+          'Przygotowywanie imprez i usług turystycznych, kalkulacja kosztów oraz obsługa rezerwacji.',
+          'Organizacja i obsługa eventów, kongresów, konferencji oraz targów.',
+          'Obsługa klienta oraz informacja turystyczna w biurach podróży i agencjach eventowych.'
+        ]
+      }
+    ];
+
+    var majorsGrid = document.getElementById('majors-grid');
+
+    function renderMajors(filter) {
+      var list = filter === 'all'
+        ? MAJORS
+        : MAJORS.filter(function (item) { return item.category === filter; });
+
+      var html = '';
+      for (var i = 0; i < list.length; i++) {
+        var m = list[i];
+        html += '' +
+          '<article class="major-card">' +
+            '<div>' +
+              '<span class="major-tag">' + m.tag + '</span>' +
+              '<h3 class="major-title">' + m.title + '</h3>' +
+              '<p class="major-desc">' + m.description + '</p>' +
+            '</div>' +
+            '<div class="major-footer">' +
+              '<span class="major-perk">Czesne 0 zł</span>' +
+              '<button type="button" class="text-link" onclick="openMajorModal(\'' + m.id + '\')">' +
+                'Szczegóły kierunku &rarr;' +
+              '</button>' +
+            '</div>' +
+          '</article>';
+      }
+      majorsGrid.innerHTML = html;
+    }
+
+    renderMajors('all');
+
+    // Filtry kierunków
+    var filterButtons = document.querySelectorAll('.filter-chip');
+    for (var i = 0; i < filterButtons.length; i++) {
+      filterButtons[i].addEventListener('click', function () {
+        for (var j = 0; j < filterButtons.length; j++) {
+          filterButtons[j].classList.remove('is-active');
+        }
+        this.classList.add('is-active');
+        renderMajors(this.getAttribute('data-filter'));
+      });
+    }
+
+    /* --------------------------------------------------------------------------
+       6. MODALE (SZCZEGÓŁY KIERUNKU, STANDARDY, AKTUALNOŚCI)
+       -------------------------------------------------------------------------- */
+    var majorModal = document.getElementById('major-modal');
+    var standardsModal = document.getElementById('standards-modal');
+    var newsModal = document.getElementById('news-modal');
+
+    function openMajorModal(id) {
+      var major = null;
+      for (var i = 0; i < MAJORS.length; i++) {
+        if (MAJORS[i].id === id) {
+          major = MAJORS[i];
+          break;
+        }
+      }
+      if (!major) return;
+
+      document.getElementById('major-modal-tag').textContent = major.tag;
+      document.getElementById('major-modal-title').textContent = major.title;
+      document.getElementById('major-modal-desc').textContent = major.description;
+
+      var listHtml = '';
+      for (var j = 0; j < major.details.length; j++) {
+        listHtml += '<li>' + major.details[j] + '</li>';
+      }
+      document.getElementById('major-modal-list').innerHTML = listHtml;
+
+      document.getElementById('major-modal-select-btn').onclick = function () {
+        closeMajorModal();
+        var selectEl = document.getElementById('form-major');
+        if (selectEl) {
+          selectEl.value = major.title;
+        }
+        document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
+      };
+
+      majorModal.classList.remove('hidden');
+    }
+
+    function closeMajorModal() {
+      majorModal.classList.add('hidden');
+    }
+
+    function openStandardsModal() {
+      standardsModal.classList.remove('hidden');
+    }
+
+    function closeStandardsModal() {
+      standardsModal.classList.add('hidden');
+    }
+
+    function openNewsModal() {
+      newsModal.classList.remove('hidden');
+    }
+
+    function closeNewsModal() {
+      newsModal.classList.add('hidden');
+    }
+
+    // Zamykanie modali po kliknięciu w tło lub klawiszem Escape
+    var backdrops = [majorModal, standardsModal, newsModal, cookieModal];
+    for (var b = 0; b < backdrops.length; b++) {
+      backdrops[b].addEventListener('click', function (e) {
+        if (e.target === this) {
+          this.classList.add('hidden');
+        }
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeMajorModal();
+        closeStandardsModal();
+        closeNewsModal();
+        closeCookieSettingsModal();
+      }
+    });
+
+    /* --------------------------------------------------------------------------
+       7. WALIDACJA FORMULARZA KONTAKTOWEGO / REKRUTACYJNEGO
+       -------------------------------------------------------------------------- */
+    var contactForm = document.getElementById('contact-form');
+    var formFeedback = document.getElementById('form-feedback');
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var nameVal = document.getElementById('form-name').value.trim();
+      var contactVal = document.getElementById('form-contact').value.trim();
+      var majorVal = document.getElementById('form-major').value;
+
+      formFeedback.classList.remove('hidden', 'is-error', 'is-success');
+
+      if (nameVal.length < 2) {
+        formFeedback.textContent = 'Proszę podać imię i nazwisko kandydata.';
+        formFeedback.classList.add('is-error');
+        document.getElementById('form-name').focus();
+        return;
+      }
+
+      if (contactVal.length < 5) {
+        formFeedback.textContent = 'Proszę podać numer telefonu lub adres e-mail do kontaktu.';
+        formFeedback.classList.add('is-error');
+        document.getElementById('form-contact').focus();
+        return;
+      }
+
+      formFeedback.textContent = 'Dziękujemy, ' + nameVal + '. Twoje zapytanie dotyczące kierunku „' + majorVal + '” zostało przyjęte. Sekretariat szkoły (tel. 018 444 37 04) skontaktuje się z Tobą.';
+      formFeedback.classList.add('is-success');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
